@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.2.21"
+    id("com.gradleup.shadow") version "9.3.0"
     application
 }
 
@@ -26,4 +27,8 @@ kotlin {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.build {
+    dependsOn(tasks.shadowJar)
 }

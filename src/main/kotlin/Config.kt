@@ -18,7 +18,8 @@ data class Config(
     val maxImageSizeForSequentialProcessing: Long,
     val characterRamp: String,
     val fontAspectRatio: Double,
-    val colorWeights: ColorWeights
+    val colorWeights: ColorWeights,
+    val background: Int,
 ) {
     companion object {
         fun default(): Config {
@@ -29,7 +30,9 @@ data class Config(
                 " .:-=+*#%@",
                 0.5,
                 // Rec. 709
-                ColorWeights(54, 183, 19)
+                ColorWeights(54, 183, 19),
+                // Black
+                0xFF000000.toInt(),
             )
         }
     }
