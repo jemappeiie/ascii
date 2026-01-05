@@ -39,6 +39,6 @@ java -jar ascii-1.0.0-all.jar --path ./images/cat.jpg --width 80 --invert
 ## 🗺️ Roadmap
 
 - Save to file
-- Alpha blending
+- Alpha blending ✅
 - Parallel decomposition
 - ASCII to image
