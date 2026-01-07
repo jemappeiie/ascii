@@ -18,27 +18,28 @@ Go to the latest release and download the `.jar` file. That's it.
 Open your terminal, navigate to the directory where you saved the file, and execute the following command.
 
 ```console
-java -jar ascii-<version>-all.jar --path <path-to-image> [options]
+java -jar ascii-<version>.jar --input <path-to-image> [options]
 ```
 
 ### Arguments and options
 
-| Parameter | Type | Required | Description |
-|:--|:--|:--|:--|
-| --path | String | Yes | The local file path to the source image. |
-| --width | Int | No | Target width in characters. (Default: 100) |
-| --height | Int | No | Target height in characters. |
-| --invert | Flag | No | Inverts the brightness levels of the generated art. |
+| Parameter | Type | Required | Description                                            |
+|:----------|:--|:---------|:----------------------------------------------------------|
+| --input   | String | Yes      | Path to the source file.                             |
+| --output  | String | No       | Path to the output file.                             |
+| --width   | Int | No       | Target width in characters. (Default: 100)              |
+| --height  | Int | No       | Target height in characters.                            |
+| --invert  | Flag | No       | Inverts the brightness levels of the generated art.    |
 
-**Note:** If `--height` omitted, the tool automatically calculates it based on the source image’s dimensions. This calculation is specially adjusted to account for the rectangular shape of terminal characters, ensuring your ASCII art doesn't look "squashed" or "stretched."
-
+**Note:** If `--height` is omitted, the tool automatically calculates it based on the source image’s dimensions. This calculation is specially adjusted to account for the rectangular shape of terminal characters, ensuring your ASCII art doesn't look "squashed" or "stretched"  
+**Note:** If `--output` is omitted, the art is printed directly to the console.
 ### Example 
 ```console
-java -jar ascii-1.0.0-all.jar --path ./images/cat.jpg --width 80 --invert
+java -jar ascii-1.0.0.jar --input ./images/cat.jpg --output ./cat.txt --width 80 --invert
 ```
 ## 🗺️ Roadmap
 
-- Save to file
+- Save to file ✅
 - Alpha blending ✅
 - Parallel decomposition
 - ASCII to image
