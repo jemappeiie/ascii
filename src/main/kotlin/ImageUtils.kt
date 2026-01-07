@@ -15,7 +15,7 @@ object ImageUtils {
         require(file.isFile) { "Path is not a file: $path" }
 
         ImageIO.read(file)
-            ?: throw IOException("Unreadable or corrupted file: $path. Supported formats: $supportedFormats")
+            ?: throw IOException("Failed to load file: $path. Supported formats: $supportedFormats")
     }
 
     fun resizeImage(image: BufferedImage, targetWidth: Int, targetHeight: Int): BufferedImage {
